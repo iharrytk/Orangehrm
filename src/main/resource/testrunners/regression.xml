@@ -2,14 +2,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="OrangeHRM Regression Suite Master Suite" verbose="4" thread-count="3" parallel="tests">
 
-	<!--<listeners>
+	<listeners>
+		
 		<listener
-			class-name="com.qa.waf.listeners.ExtentReportListener" />
+			class-name="com.qa.orangehrm.listeners.TestAllureListener" />
 		<listener
-			class-name="com.qa.waf.listeners.TestAllureListener" />
-		<listener
-			class-name="com.qa.waf.listeners.AnnotationTransformer" />
-	</listeners>-->
+			class-name="com.qa.orangehrm.listeners.AnnotationTransformer" />
+	</listeners>
 	
 	<test name="Login Page Test">
 	<parameter name="browser" value="chrome" />
