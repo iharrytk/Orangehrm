@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="OrangeHRM Regression Suite Master Suite" verbose="4" thread-count="3" parallel="tests">
+
+	<!--<listeners>
+		<listener
+			class-name="com.qa.waf.listeners.ExtentReportListener" />
+		<listener
+			class-name="com.qa.waf.listeners.TestAllureListener" />
+		<listener
+			class-name="com.qa.waf.listeners.AnnotationTransformer" />
+	</listeners>-->
+	
+	<test name="Login Page Test">
+	<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.qa.orangehrm.tests.LoginPageTest" />
+		</classes>
+	</test>
+	<test name="PIM Page Test">
+	<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.qa.orangehrm.tests.PIMPageTest" />
+		</classes>
+	</test>
+	
+	
+
+</suite>
