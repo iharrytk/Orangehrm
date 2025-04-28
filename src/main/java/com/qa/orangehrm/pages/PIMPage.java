@@ -21,8 +21,16 @@ public class PIMPage {
 	private By employeeList = By.xpath("//a[text()='Employee List']");
 	private By employeeNameInEmployeeList = By.xpath("(//input[@placeholder='Type for hints...'])[1]");
 	private By searchButtonInEmployeeList = By.xpath("//button[@type='submit']");
-	private By searchResultMessageInEmployeeList = By.xpath("//div[@class='orangehrm-horizontal-padding orangehrm-vertical-padding']");
-
+	private By searchResultMessageInEmployeeList = By
+			.xpath("//div[@class='orangehrm-horizontal-padding orangehrm-vertical-padding']");
+	private By deleteButtonWhenDeletetingEmployee = By.xpath("//i[@class='oxd-icon bi-trash']");
+	private By yesDeleteButton = By
+			.xpath("//button[@class='oxd-button oxd-button--medium oxd-button--label-danger orangehrm-button-margin']");
+	private By messageAfterDeletingRecord=By.xpath("//span[text()='No Records Found']");
+	
+	
+	
+	
 	public PIMPage(WebDriver driver) {
 
 		this.driver = driver;
@@ -48,6 +56,18 @@ public class PIMPage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(employeeNameInEmployeeList)).sendKeys(name);
 		driver.findElement(searchButtonInEmployeeList).click();
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(searchResultMessageInEmployeeList)).getText();
+
+	}
+
+	public String deleteEmployee(String name) {
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(employeeList)).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(employeeNameInEmployeeList)).sendKeys(name);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(searchButtonInEmployeeList)).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(deleteButtonWhenDeletetingEmployee)).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(yesDeleteButton)).click();
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(messageAfterDeletingRecord)).getText();
 
 	}
 
