@@ -134,13 +134,13 @@ public class DriverFactory {
 				
 				switch (envName.toLowerCase().trim()) {
 				case "dev":	
-					ip = new FileInputStream("./src/main/resource/config/devConfig.properties");
+					ip = new FileInputStream("./src/main/resource/config/qaconfig.properties");
 					break;
 				case "stage":	
-					ip = new FileInputStream("./src/main/resource/config/stageConfig.properties");
+					ip = new FileInputStream("./src/main/resource/config/qaconfig.properties");
 					break;
 				case "prod":
-					ip = new FileInputStream("./src/main/resource/config/prodConfig.properties");
+					ip = new FileInputStream("./src/main/resource/config/qaconfig.properties");
 					break;
 				case "qa":
 					

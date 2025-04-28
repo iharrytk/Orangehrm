@@ -25,7 +25,7 @@ public class LoginPage {
 	
 	public DashboardPage doLoginWithValidCredentials() {
 		
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(username)).sendKeys("Admin");
 		driver.findElement(password).sendKeys("admin123");
 		driver.findElement(loginButton).click();

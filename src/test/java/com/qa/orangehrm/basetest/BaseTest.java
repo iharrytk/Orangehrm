@@ -36,6 +36,7 @@ public class BaseTest {
 		sa=new SoftAssert();
 		lp=new LoginPage(driver);
 		
+		
 	}
 	
 	@AfterTest

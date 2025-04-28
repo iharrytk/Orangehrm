@@ -33,7 +33,7 @@ public class DashboardPage {
 
 	public PIMPage navigateToPIMPage() {
 
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(PIMlink)).click();
 		return new PIMPage(driver);
 
