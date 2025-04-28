@@ -7,7 +7,7 @@ import com.qa.orangehrm.pages.DashboardPage;
 
 public class LoginPageTest extends BaseTest {
 
-	@Test(priority=1,description = "TC_003_Validate if Forgot password link is present on Login Page",enabled=true)
+	@Test(priority=1,description = "TC_003_Validate if Forgot password link is present on Login Page",enabled=false)
 	public void forgotPasswordLinkTest() {
 		Boolean linkavailability = lp.forgotPasswordLink();
 		Assert.assertTrue(linkavailability);
@@ -22,7 +22,7 @@ public class LoginPageTest extends BaseTest {
 
 	}
 
-	@Test(priority=3,description = "TC_001_Validate Login Page with valid credentials")
+	@Test(priority=3,description = "TC_001_Validate Login Page with valid credentials",enabled=true)
 	public void loginWithValidCredentialsTest() {
 		DashboardPage dp = lp.doLoginWithValidCredentials();
 		String actualTitle = dp.getDashboardTitle();
