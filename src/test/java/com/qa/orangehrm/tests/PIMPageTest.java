@@ -1,5 +1,7 @@
 package com.qa.orangehrm.tests;
 
+import java.util.List;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -55,6 +57,23 @@ public class PIMPageTest extends BaseTest {
 		dp.doLogout();
 		Assert.assertTrue(actualMessage.contains("No Records Found"));
 
+	}
+	
+	
+	@Test(description="TC_007_Validate if we are able to search for a specific employee from the Employee table",priority=7, enabled = true)
+	public void printEmployeeDetailsTest() {
+		
+		dp = lp.doLoginWithValidCredentials();
+		pp = dp.navigateToPIMPage();
+		List<String> employeelist=pp.employeeList();
+		if(employeelist.contains("Smith")) 
+		{Assert.assertTrue(true);}
+		else {
+			Assert.assertTrue(false);
+		}
+		
+		dp.doLogout();
+		
 	}
 
 }
