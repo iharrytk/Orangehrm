@@ -22,6 +22,12 @@
 			<class name="com.qa.orangehrm.tests.PIMPageTest" />
 		</classes>
 	</test>
+	<test name="Leave Page Test">
+	<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.qa.orangehrm.tests.LeavePageTest" />
+		</classes>
+	</test>
 	
 	
 

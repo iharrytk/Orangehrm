@@ -10,6 +10,7 @@ import org.testng.asserts.SoftAssert;
 
 import com.qa.orangehrm.driverfactory.DriverFactory;
 import com.qa.orangehrm.pages.DashboardPage;
+import com.qa.orangehrm.pages.LeavePage;
 import com.qa.orangehrm.pages.LoginPage;
 import com.qa.orangehrm.pages.PIMPage;
 
@@ -21,6 +22,7 @@ public class BaseTest {
 	protected LoginPage lp;
 	protected DashboardPage dp;
 	protected PIMPage pp;
+	protected LeavePage lep;
 	
 	@Parameters({"browser"})
 	@BeforeTest
