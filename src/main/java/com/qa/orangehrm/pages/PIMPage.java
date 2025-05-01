@@ -2,7 +2,7 @@ package com.qa.orangehrm.pages;
 
 import java.time.Duration;
 import java.util.ArrayList;
-import java.util.Iterator;
+//import java.util.Iterator;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -32,8 +32,8 @@ public class PIMPage {
 			.xpath("//button[@class='oxd-button oxd-button--medium oxd-button--label-danger orangehrm-button-margin']");
 	private By messageAfterDeletingRecord = By.xpath("//span[text()='No Records Found']");
 	private By employeeListPagination = By.xpath("//div[@class='orangehrm-bottom-container']/nav/ul/li/button");
-	private By employeeRows = By.xpath(
-			"((//div[@class='oxd-table orangehrm-employee-list']//div[@class='oxd-table-body']//div[@class='oxd-table-card'])/div)");
+	//private By employeeRows = By.xpath(
+			//"((//div[@class='oxd-table orangehrm-employee-list']//div[@class='oxd-table-body']//div[@class='oxd-table-card'])/div)");
 	private By employeesLastName = By
 			.xpath("//div[@class='oxd-table-row oxd-table-row--with-border oxd-table-row--clickable']/div[4]");
 
@@ -90,7 +90,7 @@ public class PIMPage {
 				int page = Integer.parseInt(ele.get(i).getText());
 				System.out.println("We are in page:" + page);
 				ele.get(i).click();
-				List<WebElement> rows = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(employeeRows));
+				//List<WebElement> rows = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(employeeRows));
 				List<WebElement> cols = wait
 						.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(employeesLastName));
 				//for (int j = 0; j < rows.size(); j++) {

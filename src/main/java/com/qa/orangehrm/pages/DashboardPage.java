@@ -15,7 +15,7 @@ public class DashboardPage {
 	private By PIMlink = By.xpath("//span[text()='PIM']");
 	private By userLogoutDropdown=By.xpath("//p[@class='oxd-userdropdown-name']");
 	private By logoutLink=By.xpath("//ul[@class='oxd-dropdown-menu']/li/a[text()='Logout']");
-	
+	private By LeaveLink=By.xpath("//span[text()='Leave']");
 
 	public DashboardPage(WebDriver driver) {
 
@@ -36,6 +36,14 @@ public class DashboardPage {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(PIMlink)).click();
 		return new PIMPage(driver);
+
+	}
+	
+	public LeavePage navigateToLeavePage() {
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(LeaveLink)).click();
+		return new LeavePage(driver);
 
 	}
 	
